@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block contents %}
+<div class="llArticleList">
+	{% if context.article_list%}
+		{%for data in context.article_list %}
+	<div class="well" id = "article_{{data.id}}">
+		<h1><a href = "{{url_for('article_detail', id=data.id)}}">{{data.title}}</a></h1>
+		<h3>{{data.author}}</h3>
+		<h6>{{data.date_created.strftime('%Y-%m-%d %H:%M:%S')}}</h6>
+
+		<p>
+			{{data.content|truncate(50)|safe}}
+		</p>
+	</div>
+		{%endfor%}
+	{%else%}
+		<div class = "no-list">
+			<p>none</p>
+		</div>
+
+	{% endif %}
+
+</div>
+{% endblock %}

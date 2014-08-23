@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+	<div class="llArticleDelete">
+		<form role="form" method="post">
+		<div class="alert alert-warning alert-dismissible" role="alert">
+			<strong>경고!</strong> 댓글을 삭제하기 위한 비밀번호를 입력해주세요.
+			<div class="form-group">
+				<label for="comment_create_password">비밀번호</label>
+				<input type="password" name="password" class="form-control" id="comment_create_password" placeholder="비밀번호 입력" style="width:150px">
+			</div>
+		</div>
+			<button type="submit" class="btn btn-danger">댓글삭제</button>
+
+		</form>
+	</div>
+{% endblock %}
